@@ -12,7 +12,7 @@ permalink: /about/
 📍 **Postdoctoral Researcher at IFISC, UIB**  
 🎓 **Ph.D. in Applied Physics**  
 📧 [fbellisardi@ifisc.uib-csic.es](mailto:fbellisardi@ifisc.uib-csic.es)  
-🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi)  
+🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi-459b40165)  
 
 
 I hold a **Ph.D. in Applied Physics** from the **University of Bologna**, specializing in **complex systems, data-driven models, and advanced data analytics**. My research focuses on **urban mobility challenges**, developing **predictive models** and **smart city solutions** through a data-driven approach.  
@@ -97,7 +97,7 @@ My CV can be downloaded [**HERE**](/assets/files/cv_2025.pdf).
 
 ## **Contact**
 💌 [fbellisardi@ifisc.uib-csic.es](mailto:fbellisardi@ifisc.uib-csic.es)  
-🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi)  
+🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi-459b40165)  
 
 ---
 

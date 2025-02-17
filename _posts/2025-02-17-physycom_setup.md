@@ -16,7 +16,7 @@ pin: true
 ## Ubuntu On Windows
 
 It is better to use Bash on Ubuntu on Windows only from build 15063 (Creators Update).
-1) If not already installed, please install [chocolatey](http://chocolatey.org)
+1) If not already installed, please install [chocolatey](https://chocolatey.org)
 2) If not already installed, please install an X server with this procedure: open Powershell with Administrator privileges and write
 
 ```PowerShell
@@ -111,8 +111,8 @@ echo -e "\n export WORKSPACE=/full/path/to/my/folder \n" >> ~/.bash_profile
 
 ## Windows (7+)
 
-1) Install or update Visual Studio to at least version 2017, making sure to have it fully patched (run again the installer if not sure to automatically update to latest version). If you need to install from scratch, download VS from here: [Visual Studio 2017 Community](http://visualstudio.com)
-2) If not already installed, please install chocolatey using the [official guide](http://chocolatey.org)
+1) Install or update Visual Studio to at least version 2017, making sure to have it fully patched (run again the installer if not sure to automatically update to latest version). If you need to install from scratch, download VS from here: [Visual Studio 2017 Community](https://visualstudio.com)
+2) If not already installed, please install chocolatey using the [official guide](https://chocolatey.org)
 3) If you are not sure about having them updated, or even installed, please install `git`, `cmake` and an updated `Powershell`. To do so, open your Powershell with Administrator privileges and type
 
 ```PowerShell
@@ -201,7 +201,7 @@ PS Code>          .\vcpkg upgrade --no-dry-run
 
 ## Cygwin
 
-1) If not already installed, please install chocolatey using the [official guide](http://chocolatey.org)
+1) If not already installed, please install chocolatey using the [official guide](https://chocolatey.org)
 2) Open a Powershell with Administrator privileges and type
 
 ```PowerShell
