@@ -74,45 +74,44 @@
     <ul class="nav">
       <!-- home -->
       <li class="nav-item{% if page.layout == '/home/' %}{{ " active" }}{% endif %}">
-        <a href="{{ '/' | relative_url }}" class="nav-link">
+        <a href="{{ '/' | absolute_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
       <!-- blog -->
       <li class="nav-item{% if page.url == '/blog/' | relative_url %}{{ " active " }}{% endif %}">
-         <a href="{{ '/blog/' | relative_url }}" class="nav-link">
+         <a href="{{ '/blog/' | absolute_url }}" class="nav-link">
            <i class="fa-fw fas fa-pen"></i> 
            <span>BLOG</span>
          </a>
       </li>
 
       {% assign bottom_tabs = "Categories,Tags,Archives" | split: "," %}
-      <ul class="nav">
         {% for tab in site.tabs %}
           {% if tab.url == '/' | relative_url %}{% continue %}{% endif %}
             {% unless bottom_tabs contains tab.title %}
             <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-              <a href="{{ tab.url | relative_url }}" class="nav-link">
+              <a href="{{ tab.url | absolute_url }}" class="nav-link">
                 <i class="fa-fw {{ tab.icon }}"></i>
                 <span>{{ tab.title | upcase }}</span>
               </a>
             </li>
           {% endunless %}
         {% endfor %}
-      </ul>
-    </nav>
+    </ul>
+  </nav>
 
-    <!-- Bottom Sidebar Icons -->
-    <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
-        {% for tab in site.tabs %}
-        {% if bottom_tabs contains tab.title %}
-          <a href="{{ tab.url | relative_url }}" class="btn btn-link nav-link" title="{{ tab.title | capitalize }}">
-            <i class="fa-fw {{ tab.icon }}"></i>
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
+  <!-- Bottom Sidebar Icons -->
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+      {% for tab in site.tabs %}
+      {% if bottom_tabs contains tab.title %}
+        <a href="{{ tab.url | relative_url }}" class="btn btn-link nav-link" title="{{ tab.title | capitalize }}">
+          <i class="fa-fw {{ tab.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 
 </aside>
 <!-- #sidebar -->

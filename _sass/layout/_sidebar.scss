@@ -127,7 +127,8 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       opacity: 0.9;
       width: 100%;
 
-      @include mx.pl-pr(1.5rem);
+      padding-left: 0.75 !important;
+      padding-right: 0.75 !important;
 
       @include bp.xxxl {
         @include mx.pl-pr(2.75rem);
@@ -138,6 +139,8 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
         display: flex;
         align-items: center;
+        width: 100%; /* Ensures full width for consistency */
+        justify-content: flex-start; /* Aligns text & icon properly */
         border-radius: 0.75rem;
         font-weight: 600;
 
