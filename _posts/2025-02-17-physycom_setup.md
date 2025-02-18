@@ -3,7 +3,7 @@ title: "Prerequisites for the Code Building"
 description: >-
   A comprehensive guide to setting up the development environment for various platforms.
   This includes installation instructions for Ubuntu, macOS, Windows, and Cygwin.
-author: Federico Bellisardi
+author: fbellisardi
 date: 2025-02-17 08:30:00 +0100
 categories: [Blogging, Tutorial]
 tags: [getting_started]

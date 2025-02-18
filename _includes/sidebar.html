@@ -16,30 +16,6 @@
   </header>
   <!-- .profile-wrapper -->
 
-  <nav class="flex-column flex-grow-1 w-100 ps-0">
-    <ul class="nav">
-      <!-- home -->
-      <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
-        <a href="{{ '/' | relative_url }}" class="nav-link">
-          <i class="fa-fw fas fa-home"></i>
-          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
-        </a>
-      </li>
-      <!-- the real tabs -->
-      {% for tab in site.tabs %}
-        <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-          <a href="{{ tab.url | relative_url }}" class="nav-link">
-            <i class="fa-fw {{ tab.icon }}"></i>
-            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
-            <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
-          </a>
-        </li>
-        <!-- .nav-item -->
-      {% endfor %}
-    </ul>
-  </nav>
-
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     {% unless site.theme_mode %}
       <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
@@ -93,5 +69,50 @@
     {% endfor %}
   </div>
   <!-- .sidebar-bottom -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item{% if page.layout == '/home/' %}{{ " active" }}{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        </a>
+      </li>
+      <!-- blog -->
+      <li class="nav-item{% if page.url == '/blog/' | relative_url %}{{ " active " }}{% endif %}">
+         <a href="{{ '/blog/' | relative_url }}" class="nav-link">
+           <i class="fa-fw fas fa-pen"></i> 
+           <span>BLOG</span>
+         </a>
+      </li>
+
+      {% assign bottom_tabs = "Categories,Tags,Archives" | split: "," %}
+      <ul class="nav">
+        {% for tab in site.tabs %}
+          {% if tab.url == '/' | relative_url %}{% continue %}{% endif %}
+            {% unless bottom_tabs contains tab.title %}
+            <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+              <a href="{{ tab.url | relative_url }}" class="nav-link">
+                <i class="fa-fw {{ tab.icon }}"></i>
+                <span>{{ tab.title | upcase }}</span>
+              </a>
+            </li>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Bottom Sidebar Icons -->
+    <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+        {% for tab in site.tabs %}
+        {% if bottom_tabs contains tab.title %}
+          <a href="{{ tab.url | relative_url }}" class="btn btn-link nav-link" title="{{ tab.title | capitalize }}">
+            <i class="fa-fw {{ tab.icon }}"></i>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
 </aside>
 <!-- #sidebar -->

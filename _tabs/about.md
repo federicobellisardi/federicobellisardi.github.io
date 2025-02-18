@@ -1,104 +1,59 @@
 ---
-# layout: page
 layout: post
-title: "Federico Bellisardi"
+title: "Personal Information"
 icon: fas fa-info-circle
-order: 4
+order: 5
 toc: true
-permalink: /about/
+permalink: /
 ---
-  
+<div style="display: flex; align-items: center; flex-direction: row-reverse;">
+<!-- <div style="display: flex; align-items: center; justify-content: space-between; flex-direction: row-reverse; flex-wrap: wrap;"> -->
+  <!-- Profile Image -->
+  <img src="/assets/img/winter.png" alt="Federico Bellisardi" 
+       style="width: 300px; height: auto; margin-left: 30px; border-radius: 15px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
 
-📍 **Postdoctoral Researcher at IFISC, UIB**  
-🎓 **Ph.D. in Applied Physics**  
-📧 [fbellisardi@ifisc.uib-csic.es](mailto:fbellisardi@ifisc.uib-csic.es)  
-🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi-459b40165)  
+  <!-- Profile Info -->
+  <div style="max-width: 600px;">
+    <h2 style="margin-bottom: 5px;">Federico Bellisardi</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 10px;">
+      <strong>Postdoctoral Researcher</strong> at <a href="https://ifisc.uib-csic.es/" target="_blank">IFISC, UIB</a>  
+      <!-- <strong>Ph.D. in Applied Physics</strong> at <a href="https://www.unibo.it/en" target="_blank">University of Bologna</a>   -->
+    </p>
 
+    <!-- Research Interests -->
+    <p style="font-size: 0.95rem; color: #555; line-height: 1.5;">
+      🔬 Specializing in <strong>Complex Systems, Data-Driven Models</strong>, and <strong>Urban Mobility</strong>.  
+      Developing <em>Machine Learning, Graph-Based, and Agent-Based Models</em> for Smart Cities.  
+    </p>
 
-I hold a **Ph.D. in Applied Physics** from the **University of Bologna**, specializing in **complex systems, data-driven models, and advanced data analytics**. My research focuses on **urban mobility challenges**, developing **predictive models** and **smart city solutions** through a data-driven approach.  
+    <!-- Contact Links -->
+    <p style="margin-top: 10px;">
+      <a href="mailto:fbellisardi@ifisc.uib-csic.es" style="text-decoration: none; margin-right: 15px;">
+        <i class="fa fa-envelope"></i> <strong>Email</strong>
+      </a>
+      <a href="https://github.com/federicobellisardi" target="_blank" style="text-decoration: none; margin-right: 15px;">
+        <i class="fab fa-github"></i> <strong>GitHub</strong>
+      </a>
+      <a href="https://www.linkedin.com/in/federico-bellisardi-459b40165" target="_blank" style="text-decoration: none;">
+        <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
+      </a>
+    </p>
+  </div>
+</div>
 
-I have a passion for transforming **data into actionable insights** for sustainable development and innovation. My expertise includes **machine learning applications**, **graph-based models**, and **agent-based simulations** for traffic flow analysis.
+---
+
+I am currently <strong>awaiting the defense of my Ph.D. thesis</strong> in <strong>Applied Physics</strong> at the <strong>University of Bologna</strong>.  
+My research specializes in <strong>complex systems, data-driven models, and advanced data analytics</strong>, with a strong focus on <strong>urban mobility challenges</strong>.  
+Throughout my academic journey, I have developed <strong>predictive models</strong> and <strong>smart city solutions</strong> using a <strong>data-driven approach</strong> to tackle real-world transportation issues.
+
+My passion lies in translating **raw data into meaningful insights**, enabling sustainable development and innovative solutions. I have expertise in:  
+
+- **Machine learning applications** for mobility forecasting  
+- **Graph-based network models** to study urban dynamics  
+- **Agent-based simulations** for traffic flow analysis  
+- **Physics-informed neural networks (PINNs)** to integrate data with mathematical models  
+
+Beyond my research, I am deeply interested in **smart mobility, urban planning, and the intersection of physics and artificial intelligence**. I strive to develop models that bridge the gap between theoretical research and real-world applications, enhancing efficiency and sustainability in urban environments.  
 
 My CV can be downloaded [**HERE**](/assets/files/cv_2025.pdf).
-
----
-
-## **Research Interests**
-- **Complex Systems & Network Science**
-- **Data-Driven Models & Machine Learning**
-- **Urban Mobility & Smart Cities**
-- **Traffic Flow & Agent-Based Simulations**
-
----
-
-## **Experience**
-- 🏛️ **Postdoctoral Researcher** – IFISC, UIB *(2025 - Present)*
-- 📊 **Research Fellow** – University of Bologna *(2021 - 2022)*
-- 🖥️ **SAP ABAP Developer** – E-Services, De Longhi *(2019 - 2020)*
-
----
-
-## **Education**
-- 🎓 **Ph.D. in Applied Physics** – *University of Bologna (2022 - 2024)*  
-  **Dissertation:** *Data Analytics and Predictive Models for Sustainable Mobility in Future Smart Cities*
-
-- 📚 **M.Sc. in Theoretical Physics** – *University of Bologna (2015 - 2019)*  
-  **Dissertation:** *Stability of Gaseous Structures in Axisymmetric Rotation in Presence of a Black Hole*
-
-- 📖 **B.Sc. in Physics** – *University of Bologna (2012 - 2015)*  
-  **Dissertation:** *Studio del Trapping Adiabatico per Mappe Stocastiche*
-
----
-
-## **Technical Skills**
-- **Programming Languages:** Python, C++, LaTeX, ABAP  
-- **Data Analytics:** Machine Learning, Network Science, Graph Theory  
-- **Visualization:** Matplotlib, Seaborn, Plotly  
-- **Scientific Computing:** NumPy, SciPy, Pandas  
-- **Simulation & Modeling:** Agent-Based Models, Traffic Flow Analysis  
-
----
-
-## **Publications**
-- 📘 **Bellisardi F., et al.** – *Esercizi risolti di metodi matematici per le scienze applicate* (CEA, Zanichelli, 2024)
-- 📄 **Di Meco L., Degli Esposti M., Bellisardi F., Bazzani A.** – *Congestion Transition on Random Walks on Graphs*, Entropy 2024, [DOI: 10.3390/e26080632](https://doi.org/10.3390/e26080632)
-
----
-
-## **Last Conferences & Talks**
-🎤 **NetSci-X 2024** – *An Agent-Based Model for Traffic Flows Reconstruction from Distributed Data*  
-📢 **I Congreso Español sobre Investigación en Movilidad (2023)** – *Traffic Flow Reconstruction from Distributed Data (Emilia Romagna, Italy)*  
-🔬 **INFN IS BioPhys 2023** – *Traffic Flows Reconstruction from Distributed Data: A Case Study*  
-
----
-
-## **Teaching & Academic Involvement**
-- **Mathematics & Computer Science Instructor** – *University of Bologna (2022 - 2024)*
-- **Physics Tutor** – *University of Bologna (2021 - 2022)*
-- **Tutor for Mathematics & Statistics** – *University of Bologna (2022 - 2024)*  
-
----
-
-## **Workshops & Visiting Research**
-- **Visiting Researcher** – *IFISC, Universidad de las Islas Baleares (2024)*  
-- **Visiting Scholar** – *Universidad San Jorge, Zaragoza (2023)*  
-- **CaLISTA Geometry-Informed ML Workshop (2024, Paris, France)**  
-- **GEFENOL Summer School (2023, Barcelona, Spain)**  
-
----
-
-## **Languages**
-- 🇮🇹 **Italian** – Native  
-- 🇬🇧 **English** – Advanced  
-- 🇪🇸 **Spanish** – Advanced  
-- 🇫🇷 **French** – Basic  
-
----
-
-## **Contact**
-💌 [fbellisardi@ifisc.uib-csic.es](mailto:fbellisardi@ifisc.uib-csic.es)  
-🔗 [GitHub](https://github.com/federicobellisardi) | [LinkedIn](https://www.linkedin.com/in/federico-bellisardi-459b40165)  
-
----
-
-This page presents my background, research, and technical expertise. Feel free to reach out for collaboration or inquiries!

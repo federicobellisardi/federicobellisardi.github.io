@@ -2,7 +2,7 @@
 title: "Building a Personal Website with Jekyll, Chirpy, and GitHub Pages"
 description: >-
   A comprehensive guide to setting up, customizing, and deploying a Jekyll-based personal website using the Chirpy theme, GitHub Pages, and GitHub Actions.
-author: Federico Bellisardi
+author: fbellisardi
 date: 2025-02-17 18:30:00 +0100
 categories: [Blogging, Tutorial]
 tags: [jekyll, github_pages, chirpy, website_building]
@@ -74,8 +74,9 @@ bundle install
 Then, build and serve your site:
 ```sh
 bundle exec jekyll serve
-bundle exec htmlproofer ./_site --disable-external
-
+bundle exec htmlproofer _site \
+    \-\-disable-external \
+    \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 ```
 
 Visit **http://127.0.0.1:4000/** to preview your site.
