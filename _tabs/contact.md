@@ -32,27 +32,29 @@ order: 5
 [IFISC](https://ifisc.uib-csic.es/en/) - Institute for Cross-Disciplinary Physics and Complex Systems  
 Campus Universitat de les Illes Balears Carretera de Valldemossa, km 7,5 Edificio Científico-Técnico, 07122 Palma de Mallorca,Islas Baleares, Balearic Islands 
 
-<div id="map" style="height: 400px; width: 100%;"></div>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
 
-<script>
-  function initMap() {
-    var map = L.map('map').setView([39.636670, 2.648797], 10); // Palma de Mallorca Coordinates
+  <div id="map" style="height: 400px; width: 100%;"></div>
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+  <script>
+    function initMap() {
+      var map = L.map('map').setView([39.636670, 2.648797], 10);
 
-    L.marker([39.636670, 2.648797]).addTo(map)
-      .bindPopup('IFISC, Palma de Mallorca')
-      .openPopup();
-  }
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var script = document.createElement("script");
-    script.src = "https://unpkg.com/leaflet/dist/leaflet.js";
-    script.onload = initMap;
-    document.head.appendChild(script);
-  });
-</script>
+      L.marker([39.636670, 2.648797]).addTo(map)
+        .bindPopup('IFISC, Palma de Mallorca')
+        .openPopup();
+    }
 
+    document.addEventListener("DOMContentLoaded", initMap);
+  </script>
+
+</body>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
