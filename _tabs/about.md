@@ -43,8 +43,8 @@ permalink: /
 
 ---
 
-I am currently <strong>awaiting the defense of my Ph.D. thesis</strong> in <strong>Applied Physics</strong> at the <strong>University of Bologna</strong>.  
-My research specializes in <strong>complex systems, data-driven models, and advanced data analytics</strong>, with a strong focus on <strong>urban mobility challenges</strong>.  
+I received my doctorate in <strong>Applied Physics</strong> at the <strong>University of Bologna</strong> in 2025.  
+My research specializes in <strong>complex systems, data-driven models, and advanced data analytics</strong>, with a strong focus on <strong>mobility challenges</strong>.  
 Throughout my academic journey, I have developed <strong>predictive models</strong> and <strong>smart city solutions</strong> using a <strong>data-driven approach</strong> to tackle real-world transportation issues.
 
 My passion lies in translating **raw data into meaningful insights**, enabling sustainable development and innovative solutions. I have expertise in:  
