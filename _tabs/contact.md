@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Contacts
 icon: fas fa-address-book
 permalink: /contact/

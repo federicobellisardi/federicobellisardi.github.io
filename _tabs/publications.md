@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Publications
 icon: fas fa-book
 permalink: /publications/

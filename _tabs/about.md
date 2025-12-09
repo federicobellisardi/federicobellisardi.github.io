@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Personal Information"
 icon: fas fa-info-circle
 order: 5
