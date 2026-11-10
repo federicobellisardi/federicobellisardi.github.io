@@ -1,0 +1,58 @@
+# Single source of truth for the external profile links shown on the home page
+# (`_tabs/about.md`) and on the contacts page (`_tabs/contact.md`).
+#
+# Keys:
+#   name  - label shown next to the icon
+#   icon  - Font Awesome 6 class
+#   url   - target; use `mailto:` / `https:` explicitly
+#   group - academic | code | social  (contacts page groups by this)
+#   home  - true to also show it in the home page hero
+
+- name: Email
+  icon: fas fa-envelope
+  url: mailto:fbellisardi@ifisc.uib-csic.es
+  group: academic
+  home: true
+
+- name: Google Scholar
+  icon: fa-brands fa-google-scholar
+  url: https://scholar.google.com/citations?user=Ba8WR_8AAAAJ&hl=en
+  group: academic
+  home: true
+
+# Uncomment and fill in your ORCID iD to expose it on the contacts page.
+# - name: ORCID
+#   icon: fa-brands fa-orcid
+#   url: https://orcid.org/0000-0000-0000-0000
+#   group: academic
+#   home: false
+
+- name: ResearchGate
+  icon: fa-brands fa-researchgate
+  url: https://www.researchgate.net/profile/Federico-Bellisardi-3
+  group: academic
+  home: false
+
+- name: GitHub
+  icon: fab fa-github
+  url: https://github.com/federicobellisardi
+  group: code
+  home: true
+
+- name: LinkedIn
+  icon: fab fa-linkedin
+  url: https://www.linkedin.com/in/federico-bellisardi-459b40165
+  group: social
+  home: true
+
+- name: Twitter/X
+  icon: fa-brands fa-x-twitter
+  url: https://x.com/FBellisardi
+  group: social
+  home: false
+
+- name: Telegram
+  icon: fa-brands fa-telegram
+  url: https://t.me/federicobellisardi
+  group: social
+  home: false

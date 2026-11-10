@@ -1,0 +1,112 @@
+# Conferences, schools and workshops, newest first.
+# Rendered by `_tabs/talks.md`. Keep in sync with the CV (cv_tex/uni_cv/template.tex).
+#
+# Keys:
+#   kind     - conference | school   (used for grouping)
+#   year     - year of the event
+#   dates    - human-readable dates
+#   event    - event name
+#   location - city, country (optional)
+#   type     - Invited talk | Talk | Highlight talk | Poster | Presentation (optional, omit for attendance only)
+#   title    - title of the contribution (optional)
+#   url      - event website (optional)
+
+- kind: conference
+  year: 2026
+  dates: October 14–16
+  event: "FisEs'26 — XXVI Congreso de Física Estadística"
+  location: Tarragona, Spain
+  type: Poster
+  title: Mobility energetic balance as a driver of urban spatial organization
+
+- kind: conference
+  year: 2026
+  dates: May 19–21
+  event: CS2Italy 2026 — Conference on Computational Social Science
+  location: Turin, Italy
+  type: Highlight talk
+  title: Energetic optimality of urban networks embedded in real landscapes
+
+- kind: conference
+  year: 2026
+  dates: January 21–23
+  event: 4th Meeting of the Spanish Chapter of the Complex Systems Society
+  location: Seville, Spain
+  type: Poster
+  title: Energetic optimality in the spatial organization of cities
+
+- kind: conference
+  year: 2025
+  dates: October 2–3
+  event: II Congreso Español sobre Investigación en Movilidad
+  location: Zaragoza, Spain
+  type: Talk
+  title: Inferring urban morphology through gravitational work minimization of Twitter-derived trajectories
+
+- kind: conference
+  year: 2025
+  dates: September 1–5
+  event: Conference on Complex Systems (CCS 2025)
+  location: Siena, Italy
+  type: Talk
+  title: Data-driven agent-based reconstruction of inter-urban system dynamics
+  url: https://ccs25.cssociety.org
+
+- kind: conference
+  year: 2024
+  dates: January 22–25
+  event: NetSci-X 2024 — International School and Conference on Network Science
+  location: Venice, Italy
+  type: Poster
+  title: An agent-based model for traffic flows reconstruction from distributed data
+  url: https://netscix2024.netscisociety.org/
+
+- kind: conference
+  year: 2023
+  dates: October 5–6
+  event: I Congreso Español sobre Investigación en Movilidad
+  location: Zaragoza, Spain
+  type: Talk
+  title: "Reconstrucción del flujo de tráfico a partir de datos distribuidos. Caso de estudio Emilia-Romagna, Italia"
+
+- kind: conference
+  year: 2023
+  dates: September 18–20
+  event: INFN BioPhys 2023
+  location: Rimini, Italy
+  type: Talk
+  title: "Traffic flows reconstruction from distributed data: a case study"
+
+- kind: conference
+  year: 2022
+  dates: September 14–16
+  event: INFN BioPhys 2022
+  type: Talk
+  title: Data-driven dynamical model for traffic flows on a road network
+
+- kind: school
+  year: 2024
+  dates: September 2–5
+  event: CaLISTA Workshop — Geometry-Informed Machine Learning
+  location: Mines Paris, France
+  type: Presentation
+  title: An agent-based model for traffic flow reconstruction from distributed data
+
+- kind: school
+  year: 2023
+  dates: July 17–28
+  event: XI GEFENOL Summer School on Statistical Physics of Complex Systems
+  location: Barcelona, Spain
+
+- kind: school
+  year: 2022
+  dates: June 9–10
+  event: "S.LI.DES. workshop — The Governance of the Tourist Flows in the Future Smart Cities"
+  location: Rimini, Italy
+
+- kind: school
+  year: 2022
+  dates: May 15–20
+  event: INFN School of Statistics 2022
+  location: Paestum, Italy
+  url: https://agenda.infn.it/e/infnstat2022

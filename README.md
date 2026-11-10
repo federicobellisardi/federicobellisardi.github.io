@@ -1,84 +1,104 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# federicobellisardi.github.io
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+Source of my personal academic website — <https://federicobellisardi.github.io>.
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+Built with [Jekyll][jekyllrb] and the [Chirpy][chirpy] theme (vendored into this
+repository), deployed to GitHub Pages by the
+[Build and Deploy](.github/workflows/pages-deploy.yml) workflow on every push to
+`master`.
 
-  [![CI](https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github)][ci]&nbsp;
-  [![Codacy Badge](https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy)][codacy]&nbsp;
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod)][license]&nbsp;
-  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange)][gem]&nbsp;
-  [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
+## Where things live
 
-  [**Live Demo** →][demo]
+| Path                     | What it holds                                                       |
+| ------------------------ | ------------------------------------------------------------------- |
+| `_tabs/`                 | The site pages. Each file becomes a sidebar entry (see note below).  |
+| `_tabs/about.md`         | The home page (`permalink: /`) — bio, research interests, teasers.   |
+| `_posts/`                | Blog posts, named `YYYY-MM-DD-title.md`.                             |
+| `_data/publications.yml` | Publication list — the single source for the home and Publications.  |
+| `_data/profiles.yml`     | External profile links shown on the home and Contacts pages.         |
+| `_data/contact.yml`      | The small icon row at the top of the sidebar.                        |
+| `assets/files/`          | Downloadable files, including the CV.                                |
+| `assets/img/`            | Images, avatar, and favicons.                                        |
+| `assets/css/jekyll-theme-chirpy.scss` | Custom styles layered on top of the theme.              |
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+The sidebar navigation is generated from the `tabs` **collection** (the files in
+`_tabs/`), which shadows any top-level `tabs:` key in `_config.yml`. To add a
+page, add a file to `_tabs/` with `title`, `icon` and `order` in its front
+matter.
 
-</div>
+## Routine updates
 
-## Features
+- **New publication** — add an entry to `_data/publications.yml`. It shows up on
+  both the home page and `/publications/` automatically, with a resolvable DOI
+  link and a "Cite" BibTeX snippet generated from the same data.
+- **New post** — add `_posts/YYYY-MM-DD-slug.md` with `title`, `description`,
+  `author: fbellisardi`, `date`, `categories` and `tags`. The three most recent
+  posts are teased on the home page.
+- **New CV** — drop the PDF in `assets/files/` and point `cv_path` in
+  `_config.yml` at it.
+- **New profile link** — add it to `_data/profiles.yml` (`home: true` also puts
+  it in the home page hero).
 
-- Dark Theme
-- Localized UI language
-- Pinned Posts on Home Page
-- Hierarchical Categories
-- Trending Tags
-- Table of Contents
-- Last Modified Date
-- Syntax Highlighting
-- Mathematical Expressions
-- Mermaid Diagrams & Flowcharts
-- Dark Mode Images
-- Embed Media
-- Comment Systems
-- Built-in Search
-- Atom Feeds
-- PWA
-- Web Analytics
-- SEO & Performance Optimization
+## Analytics and comments
 
-## Documentation
+Both are wired up but inactive until you supply an account:
 
-To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
+- **Analytics** — `_config.yml`'s `analytics.goatcounter.id`. Sign up free at
+  <https://www.goatcounter.com/signup>, paste the code you pick, done. No
+  cookie banner needed (GoatCounter doesn't track individuals).
+- **Comments** — `_config.yml`'s `comments:` block, provider `giscus`
+  (comments become GitHub Discussions on this repo, no third party involved).
+  Enable "Discussions" in the repo settings, install the
+  [giscus app](https://github.com/apps/giscus), then get the four `giscus.*`
+  values from <https://giscus.app>. Leaving `provider:` empty (the default)
+  keeps comments off.
 
-## Contributing
+Every other provider in those two blocks (Google Analytics, Disqus, Matomo,
+...) works the same way — fill in its id/keys and set it as the provider.
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
-to learn, inspire, and create. Any contributions you make are greatly appreciated.
-For details, see the "[Contributing Guidelines][contribute-guide]".
+## Self-hosted assets
 
-## Credits
+`assets.self_host.enabled: true` in `_config.yml` serves fonts, Font Awesome,
+Bootstrap, etc. from this domain (via the `assets/lib` submodule) instead of
+Google Fonts / jsDelivr. The deploy workflow checks out that submodule
+(`submodules: true`); if you clone locally, run
+`git submodule update --init` first or `bundle exec jekyll build` will 404 on
+those assets.
 
-### Contributors
+## Running locally
 
-Thanks to [all the contributors][contributors] involved in the development of the project!
+Requires Ruby 3.3+ and Bundler.
 
-[![all-contributors](https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16)][contributors]
-<sub> — Made with [contrib.rocks](https://contrib.rocks)</sub>
+```console
+$ bundle install
+$ bundle exec jekyll serve
+```
 
-### Third-Party Assets
+The site is then served at <http://127.0.0.1:4000>.
 
-This project is built on the [Jekyll][jekyllrb] ecosystem and some [great libraries][lib], and is developed using [VS Code][vscode] as well as tools provided by [JetBrains][jetbrains] under a non-commercial open-source software license.
+To rebuild the theme's JS/CSS bundles (only needed when editing `_javascript/`
+or `_sass/`), install the Node dependencies and run the build:
 
-The avatar and favicon for the project's website are from [ClipartMAX][clipartmax].
+```console
+$ npm install
+$ npm run build
+```
+
+## Checks
+
+The deploy workflow runs [html-proofer][htmlproofer] against the built site and
+fails the build on broken internal links. To reproduce it locally:
+
+```console
+$ JEKYLL_ENV=production bundle exec jekyll build
+$ bundle exec htmlproofer _site --disable-external --allow-hash-href
+```
 
 ## License
 
-This project is published under [MIT License][license].
+The site content is © Federico Bellisardi. The underlying Chirpy theme is
+published under the [MIT License](LICENSE) by Cotes Chung.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
 [jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[lib]: https://github.com/cotes2020/chirpy-static-assets
-[vscode]: https://code.visualstudio.com/
-[jetbrains]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
+[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy
+[htmlproofer]: https://github.com/gjtorikian/html-proofer

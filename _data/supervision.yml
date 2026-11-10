@@ -1,0 +1,27 @@
+# Co-supervised theses, newest first. Rendered by `_tabs/teaching.md`.
+# Keep in sync with the CV (cv_tex/uni_cv/template.tex).
+#
+# Keys:
+#   student       - student's full name
+#   level         - e.g. "M.Sc. thesis", "B.Sc. thesis"
+#   title         - thesis title
+#   programme     - degree programme and university
+#   year          - academic year
+#   cosupervisors - other supervisors (optional)
+#   url           - link to the thesis (optional)
+
+- student: Ana Colomo Alonso
+  level: M.Sc. thesis
+  title: "Modeling Disease Spread in Urban Areas: The Role of Pollution"
+  programme: Master's in Physics of Complex Systems, Universitat de les Illes Balears (IFISC)
+  year: 2025/2026
+  cosupervisors: José Javier Ramasco
+  url: https://ifisc.uib-csic.es/media/publications/publicationdoc/GWz2UUtwT1abZB8Zqltfbw.pdf
+
+- student: Daniele Pucci
+  level: B.Sc. thesis
+  title: Analisi di video con visione binoculare
+  programme: Bachelor's in Physics, University of Bologna
+  year: 2022
+  cosupervisors: Armando Bazzani
+  url: https://amslaurea.unibo.it/id/eprint/27296/

@@ -16,10 +16,11 @@ timezone: Europe/Paris
 
 title: Federico Bellisardi # the main title
 
-tagline: Research Fellow | Complex Systems # it will display as the subtitle
+tagline: Postdoctoral Researcher | Complex Systems # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Academic website of Federico Bellisardi, Research Fellow in Complex Systems at IFISC, UIB.
+  Academic website of Federico Bellisardi, postdoctoral researcher at IFISC (UIB-CSIC),
+  working on complex systems, data-driven models and urban mobility.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -43,6 +44,18 @@ social:
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/federico-bellisardi-459b40165
+    - https://scholar.google.com/citations?user=Ba8WR_8AAAAJ&hl=en
+    - https://www.researchgate.net/profile/Federico-Bellisardi-3
+    - https://x.com/FBellisardi
+
+# ----- Site-specific settings (not part of the Chirpy theme) -----
+
+# Path to the downloadable CV; referenced from the home page.
+cv_path: /assets/files/cv_2026.pdf
+
+# Author name as it appears in `_data/publications.yml`; it is bolded
+# automatically in the rendered publication lists.
+author_key: Bellisardi F.
 
 # Site Verification Settings
 webmaster_verifications:
@@ -57,11 +70,21 @@ webmaster_verifications:
 # The end of `jekyll-seo-tag` settings
 
 # Web Analytics Settings
+#
+# Not configured yet — every provider below is a no-op until an id is filled
+# in (this repo's templates skip the analytics script entirely when empty, so
+# nothing is broken, it's simply off). Recommended: GoatCounter — free, no
+# cookies/consent banner needed, minimal signup.
+#   1. Create a free account at https://www.goatcounter.com/signup (pick a
+#      code, e.g. "federicobellisardi" -> your id is that code)
+#   2. Paste that code below as `goatcounter.id`
+#   3. Optionally set `pageviews.provider: goatcounter` a few lines down to
+#      also show a view counter on each post
 analytics:
   google:
     id: # fill in your Google Analytics ID
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: # fill in your GoatCounter ID, e.g. "federicobellisardi"
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
@@ -102,13 +125,23 @@ avatar: /assets/img/avatar.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: /assets/img/winter.png # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
+  # Global switch for the post-comment system. Keeping it empty means disabled
+  # (currently disabled — no provider is filled in below).
+  #
+  # Recommended: giscus — comments are stored as GitHub Discussions on this
+  # repo, so there's no third-party data processor. Setup:
+  #   1. github.com/federicobellisardi/federicobellisardi.github.io/settings
+  #      -> Features -> enable "Discussions"
+  #   2. Install the app at https://github.com/apps/giscus on this repo
+  #   3. Go to https://giscus.app, enter this repo, pick a discussion
+  #      category (e.g. "Comments"); it prints the 4 values below
+  #   4. Paste them into `giscus:` below and set `provider: giscus`
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
@@ -129,10 +162,14 @@ comments:
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+# Self-hosted static assets › https://github.com/cotes2020/chirpy-static-assets
+# Enabled so fonts/JS/CSS are served from this domain instead of Google Fonts and
+# jsDelivr: no third-party requests, no external outage risk, no cross-site
+# tracking. Requires the `assets/lib` submodule to be checked out (the deploy
+# workflow does this).
 assets:
   self_host:
-    enabled: # boolean, keep empty means false
+    enabled: true
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
     env: # [development | production]
@@ -150,19 +187,9 @@ pwa:
 paginate: 10
 paginate_path: "/blog/page:num/"
 
-tabs:
-  - title: categories
-    icon: fas fa-folder # Use a FontAwesome icon
-    url: /categories/
-  - title: tags
-    icon: fas fa-tags
-    url: /tags/
-  - title: publications
-    icon: fas fa-book
-    url: /publications/
-  - title: contact
-    icon: fas fa-address-book
-    url: /contact/
+# NOTE: the sidebar is driven by the `tabs` *collection* (the files in `_tabs/`),
+# which shadows any top-level `tabs:` key defined here. Add or edit a file in
+# `_tabs/` to change the navigation.
 
 # The base URL of your site
 baseurl: ""

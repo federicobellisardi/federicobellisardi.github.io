@@ -1,0 +1,58 @@
+# Publication list, newest first.
+# Rendered by `_tabs/publications.md` and teased on the home page.
+#
+# Keys:
+#   type    - article | book | preprint | thesis  (used for grouping)
+#   title   - publication title
+#   authors - plain-text author string; the occurrence of `site.author_key`
+#             (see `_config.yml`) is bolded automatically at render time
+#   venue   - journal / publisher
+#   year    - publication year
+#   doi     - bare DOI, e.g. "10.3390/e26080632" (optional)
+#   url     - canonical link, used when there is no DOI (optional)
+#   links   - extra { name, url } entries (PDF, code, data, ...) (optional)
+
+- type: preprint
+  title: Data-driven regional traffic simulation from heterogeneous mobility sources
+  authors: Bellisardi F., Mizzi C., Fabbri A., Micheli D., Vannelli A., Bazzani A.
+  venue: arXiv preprint
+  year: 2026
+  # TODO: add arXiv DOI / URL
+
+- type: preprint
+  title: Mobility energetic balance frames spatial configuration of cities
+  authors: Bellisardi F., Cano-Suñén E., Ruiz-Varona A., Ramasco J.J.
+  year: 2026
+  venue: arXiv preprint
+  doi: 10.48550/arXiv.2610.21558
+  url: https://arxiv.org/abs/2610.21558
+
+- type: article
+  title: The Social Dynamics and Thermodynamics Mobility on Urban Networks
+  authors: Turchetti G., Bellisardi F., Panichi F., Zanlungo F.
+  venue: International Interdisciplinary Chaos Symposium on Chaos and Complex Systems
+  year: 2026
+  doi: 10.1007/978-3-032-09101-7_23
+  url: https://doi.org/10.1007/978-3-032-09101-7_23
+
+- type: thesis
+  title: Data analytics and predictive models for sustainable multimodal mobility in future smart cities
+  authors: Bellisardi F.
+  venue: Alma Mater Studiorum — Università di Bologna
+  year: 2025
+  doi: 10.48676/unibo/amsdottorato/12316
+  url: https://amsdottorato.unibo.it/id/eprint/12316/
+
+- type: article
+  title: Congestion Transition on Random Walks on Graphs
+  authors: Di Meco L., Degli Esposti M., Bellisardi F., Bazzani A.
+  venue: Entropy
+  year: 2024
+  doi: 10.3390/e26080632
+  url: https://doi.org/10.3390/e26080632
+
+- type: book
+  title: Esercizi risolti di metodi matematici per le scienze applicate
+  authors: Bellisardi F., et al.
+  venue: CEA — Zanichelli
+  year: 2024

@@ -1,59 +1,122 @@
 ---
 layout: page
-title: "Personal Information"
+title: About
 icon: fas fa-info-circle
-order: 5
-toc: true
+order: 0
+toc: false
 permalink: /
 ---
-<div style="display: flex; align-items: center; flex-direction: row-reverse;">
-<!-- <div style="display: flex; align-items: center; justify-content: space-between; flex-direction: row-reverse; flex-wrap: wrap;"> -->
-  <!-- Profile Image -->
-  <img src="/assets/img/winter.png" alt="Federico Bellisardi" 
-       style="width: 300px; height: auto; margin-left: 30px; border-radius: 15px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
 
-  <!-- Profile Info -->
-  <div style="max-width: 600px;">
-    <h2 style="margin-bottom: 5px;">Federico Bellisardi</h2>
-    <p style="font-size: 1.1rem; margin-bottom: 10px;">
-      <strong>Postdoctoral Researcher</strong> at <a href="https://ifisc.uib-csic.es/" target="_blank">IFISC, UIB</a>  
-      <!-- <strong>Ph.D. in Applied Physics</strong> at <a href="https://www.unibo.it/en" target="_blank">University of Bologna</a>   -->
+<div class="profile-hero">
+  <picture>
+    <source srcset="{{ '/assets/img/winter.webp' | relative_url }}" type="image/webp" />
+    <img
+      class="profile-hero__photo"
+      src="{{ '/assets/img/winter.png' | relative_url }}"
+      alt="Portrait of Federico Bellisardi"
+      width="400"
+      height="400"
+      fetchpriority="high"
+    />
+  </picture>
+
+  <div class="profile-hero__body">
+    <h2 class="profile-hero__name">Federico Bellisardi</h2>
+
+    <p class="profile-hero__role">
+      Postdoctoral Researcher at
+      <a href="https://ifisc.uib-csic.es/" target="_blank" rel="noopener noreferrer">IFISC (UIB&ndash;CSIC)</a>,
+      Palma de Mallorca
     </p>
 
-    <!-- Research Interests -->
-    <p style="font-size: 0.95rem; color: #555; line-height: 1.5;">
-      🔬 Specializing in <strong>Complex Systems, Data-Driven Models</strong>, and <strong>Urban Mobility</strong>.  
-      Developing <em>Machine Learning, Graph-Based, and Agent-Based Models</em> for Smart Cities.  
+    <p class="profile-hero__summary">
+      I build data-driven and physics-informed models of complex systems, with a
+      focus on urban mobility: how people move through a city, why it congests,
+      and what can be done about it.
     </p>
 
-    <!-- Contact Links -->
-    <p style="margin-top: 10px;">
-      <a href="mailto:fbellisardi@ifisc.uib-csic.es" style="text-decoration: none; margin-right: 15px;">
-        <i class="fa fa-envelope"></i> <strong>Email</strong>
-      </a>
-      <a href="https://github.com/federicobellisardi" target="_blank" style="text-decoration: none; margin-right: 15px;">
-        <i class="fab fa-github"></i> <strong>GitHub</strong>
-      </a>
-      <a href="https://www.linkedin.com/in/federico-bellisardi-459b40165" target="_blank" style="text-decoration: none;">
-        <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
-      </a>
-    </p>
+    <ul class="link-pills">
+      {%- for profile in site.data.profiles -%}
+        {%- if profile.home -%}
+          <li>
+            <a
+              href="{{ profile.url }}"
+              {% unless profile.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}
+            >
+              <i class="{{ profile.icon }}" aria-hidden="true"></i>{{ profile.name }}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      <li>
+        <a href="{{ site.cv_path | relative_url }}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i>Curriculum Vitae
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 
 ---
 
-I received my doctorate in <strong>Applied Physics</strong> at the <strong>University of Bologna</strong> in 2025.  
-My research specializes in <strong>complex systems, data-driven models, and advanced data analytics</strong>, with a strong focus on <strong>mobility challenges</strong>.  
-Throughout my academic journey, I have developed <strong>predictive models</strong> and <strong>smart city solutions</strong> using a <strong>data-driven approach</strong> to tackle real-world transportation issues.
+## Biography
 
-My passion lies in translating **raw data into meaningful insights**, enabling sustainable development and innovative solutions. I have expertise in:  
+I am a physicist working on **urban mobility** with the tools of **complex
+systems** and **data science**. I want to understand how people and vehicles move
+through cities, why networks congest, and how the shape of a city and the terrain
+it sits on affect the cost of getting around.
 
-- **Machine learning applications** for mobility forecasting  
-- **Graph-based network models** to study urban dynamics  
-- **Agent-based simulations** for traffic flow analysis  
-- **Physics-informed neural networks (PINNs)** to integrate data with mathematical models  
+I did my PhD in **Physics** at the **University of Bologna**, supervised by
+Armando Bazzani, and defended it in May 2025. My thesis,
+[*Data analytics and predictive models for sustainable multimodal mobility in future smart cities*](https://doi.org/10.48676/unibo/amsdottorato/12316),
+combined Wi-Fi, mobile-phone and road-sensor data with agent-based and
+optimal-velocity models.
 
-Beyond my research, I am deeply interested in **smart mobility, urban planning, and the intersection of physics and artificial intelligence**. I strive to develop models that bridge the gap between theoretical research and real-world applications, enhancing efficiency and sustainability in urban environments.  
+I am now a postdoctoral researcher at **IFISC**, the Institute for
+Cross-Disciplinary Physics and Complex Systems in Palma de Mallorca. Recently I
+have been studying how topography and the energy cost of moving shape the spatial
+organisation of cities, comparing [56 cities worldwide](https://arxiv.org/abs/2610.21558).
 
-My CV can be downloaded [**HERE**](/assets/files/cv_2025.pdf).
+I like models that are simple enough to understand and grounded enough in real
+data to be useful for planning. I am also interested in how physics and machine
+learning can work together, for example in physics-informed neural networks.
+
+## Research interests
+
+<div class="card-grid">
+  <div class="card-grid__item">
+    <h3><i class="fas fa-mountain-city" aria-hidden="true"></i> Cities, terrain and energy</h3>
+    <p>How topography and movement energy relate to the spatial configuration of cities.</p>
+  </div>
+  <div class="card-grid__item">
+    <h3><i class="fas fa-project-diagram" aria-hidden="true"></i> Congestion on networks</h3>
+    <p>Random walks, maximum entropy and the transition to congestion on road graphs.</p>
+  </div>
+  <div class="card-grid__item">
+    <h3><i class="fas fa-users" aria-hidden="true"></i> Agent-based &amp; traffic simulation</h3>
+    <p>Pedestrian and vehicular models, from heritage city centres to regional road networks.</p>
+  </div>
+  <div class="card-grid__item">
+    <h3><i class="fas fa-satellite-dish" aria-hidden="true"></i> Mobility data analytics</h3>
+    <p>Turning Wi-Fi, mobile-phone, sensor and geolocated data into origin&ndash;destination flows and forecasts.</p>
+  </div>
+</div>
+
+## Selected publications
+
+{% include publication-list.html max=3 %}
+
+[See all publications &rarr;]({{ '/publications/' | relative_url }})
+
+## Latest notes
+
+<ul class="post-teasers">
+{%- for post in site.posts limit: 3 -%}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+{%- endfor -%}
+</ul>
+
+[Browse the blog &rarr;]({{ '/blog/' | relative_url }})

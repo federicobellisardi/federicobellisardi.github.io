@@ -1,0 +1,107 @@
+{% comment %}
+  Renders entries from `_data/publications.yml`.
+
+  Parameters:
+    type - optional; when set, only entries with a matching `type` are rendered
+    max  - optional; maximum number of entries to render
+{% endcomment %}
+
+{%- if include.type -%}
+  {%- assign entries = site.data.publications | where: 'type', include.type -%}
+{%- else -%}
+  {%- assign entries = site.data.publications -%}
+{%- endif -%}
+
+{%- if include.max -%}
+  {%- assign entries = entries | slice: 0, include.max -%}
+{%- endif -%}
+
+{%- capture me_bold -%}<strong>{{ site.author_key }}</strong>{%- endcapture -%}
+
+{%- comment -%}
+  `{{ ob }}`/`{{ cb }}` hold a single brace each. BibTeX needs literal `{`/`}`
+  around every field, and writing those next to a Liquid `{{ }}` tag directly
+  would garble the tokenizer, so each brace is emitted as its own tiny tag.
+{%- endcomment -%}
+{%- assign ob = '{' -%}
+{%- assign cb = '}' -%}
+
+<ul class="pub-list">
+  {%- for pub in entries -%}
+    {%- assign bib_type = 'article' -%}
+    {%- case pub.type -%}
+      {%- when 'book' -%}{%- assign bib_type = 'book' -%}
+      {%- when 'thesis' -%}{%- assign bib_type = 'phdthesis' -%}
+      {%- when 'preprint' -%}{%- assign bib_type = 'misc' -%}
+    {%- endcase -%}
+    {%- assign bib_authors = pub.authors | replace: ', ', ' and ' -%}
+    {%- assign bib_key = pub.title | slugify | truncate: 24, '' | append: pub.year -%}
+    {%- capture bibtex -%}
+@{{ bib_type }}{{ ob }}{{ bib_key }},
+  title = {{ ob }}{{ pub.title }}{{ cb }},
+  author = {{ ob }}{{ bib_authors }}{{ cb }},
+  {%- if pub.venue -%}
+  {%- case bib_type -%}
+  {%- when 'book' %}
+  publisher = {{ ob }}{{ pub.venue }}{{ cb }},
+  {%- when 'phdthesis' %}
+  school = {{ ob }}{{ pub.venue }}{{ cb }},
+  {%- when 'misc' %}
+  howpublished = {{ ob }}{{ pub.venue }}{{ cb }},
+  {%- else %}
+  journal = {{ ob }}{{ pub.venue }}{{ cb }},
+  {%- endcase -%}
+  {%- endif %}
+  year = {{ ob }}{{ pub.year }}{{ cb }}{% if pub.doi %},
+  doi = {{ ob }}{{ pub.doi }}{{ cb }}{% endif %}
+{{ cb }}
+    {%- endcapture -%}
+
+    <li>
+      <span class="pub-list__title">{{ pub.title }}</span>
+      <span class="pub-list__authors">
+        {%- if site.author_key -%}
+          {{ pub.authors | replace: site.author_key, me_bold }}
+        {%- else -%}
+          {{ pub.authors }}
+        {%- endif -%}
+      </span>
+      <span class="pub-list__venue">
+        {{- pub.venue }}{% if pub.venue and pub.year %}, {% endif %}{{ pub.year -}}
+      </span>
+
+      {%- assign has_links = false -%}
+      {%- if pub.doi or pub.url or pub.links -%}{%- assign has_links = true -%}{%- endif -%}
+
+      {%- if has_links -%}
+        <span class="pub-list__links">
+          {%- if pub.doi -%}
+            <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer">
+              DOI: {{ pub.doi }}
+            </a>
+          {%- elsif pub.url -%}
+            <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">Link</a>
+          {%- endif -%}
+
+          {%- for link in pub.links -%}
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+          {%- endfor -%}
+        </span>
+      {%- endif -%}
+
+      <details class="pub-list__cite">
+        <summary>Cite</summary>
+        <pre id="bib-{{ bib_key }}">{{- bibtex -}}</pre>
+        <button
+          type="button"
+          class="pub-list__copy"
+          onclick="
+            navigator.clipboard.writeText(document.getElementById('bib-{{ bib_key }}').textContent);
+            this.textContent = 'Copied!';
+            setTimeout(() =&gt; { this.textContent = 'Copy BibTeX'; }, 1500);
+          "
+        >Copy BibTeX</button>
+      </details>
+    </li>
+  {%- endfor -%}
+</ul>

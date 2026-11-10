@@ -4,9 +4,25 @@ title: Publications
 icon: fas fa-book
 permalink: /publications/
 order: 1
+toc: false
 ---
 
-## **Publications**
+A complete and continuously updated list is available on
+[Google Scholar](https://scholar.google.com/citations?user=Ba8WR_8AAAAJ&hl=en)
+and [ResearchGate](https://www.researchgate.net/profile/Federico-Bellisardi-3).
 
-- 📘 **Bellisardi F., et al.** – *Esercizi risolti di metodi matematici per le scienze applicate* (CEA, Zanichelli, 2024)
-- 📄 **Di Meco L., Degli Esposti M., Bellisardi F., Bazzani A.** – *Congestion Transition on Random Walks on Graphs*, Entropy 2024, [DOI: 10.3390/e26080632](https://doi.org/10.3390/e26080632)
+## Preprints
+
+{% include publication-list.html type="preprint" %}
+
+## Journal articles
+
+{% include publication-list.html type="article" %}
+
+## Thesis
+
+{% include publication-list.html type="thesis" %}
+
+## Books
+
+{% include publication-list.html type="book" %}

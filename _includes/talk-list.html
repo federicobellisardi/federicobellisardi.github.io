@@ -1,0 +1,43 @@
+{% comment %}
+  Renders entries from `_data/talks.yml`.
+
+  Parameters:
+    kind - optional; when set, only entries with a matching `kind` are rendered
+{% endcomment %}
+
+{%- if include.kind -%}
+  {%- assign entries = site.data.talks | where: 'kind', include.kind -%}
+{%- else -%}
+  {%- assign entries = site.data.talks -%}
+{%- endif -%}
+
+<ul class="pub-list talk-list">
+  {%- for talk in entries -%}
+    <li>
+      {%- if talk.title -%}
+        <span class="pub-list__title">
+          {%- if talk.type -%}<span class="talk-list__type">{{ talk.type }}</span>{%- endif -%}
+          {{ talk.title }}
+        </span>
+        <span class="pub-list__authors">
+          {%- if talk.url -%}
+            <a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer">{{ talk.event }}</a>
+          {%- else -%}
+            {{ talk.event }}
+          {%- endif -%}
+        </span>
+      {%- else -%}
+        <span class="pub-list__title">
+          {%- if talk.url -%}
+            <a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer">{{ talk.event }}</a>
+          {%- else -%}
+            {{ talk.event }}
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+      <span class="pub-list__venue">
+        {{- talk.location }}{% if talk.location %} · {% endif %}{{ talk.dates }}, {{ talk.year -}}
+      </span>
+    </li>
+  {%- endfor -%}
+</ul>

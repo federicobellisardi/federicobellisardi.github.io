@@ -1,1 +1,38 @@
 <!-- A placeholder to allow defining custom metadata -->
+
+<!--
+  Schema.org Person markup. `jekyll-seo-tag` describes the *page*; this describes
+  the *author*, which is what search engines and academic aggregators look for on
+  a researcher's site.
+-->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.social.name | jsonify }},
+    "url": {{ site.url | append: site.baseurl | jsonify }},
+    "email": {{ site.social.email | prepend: 'mailto:' | jsonify }},
+    "image": {{ site.avatar | absolute_url | jsonify }},
+    "jobTitle": "Postdoctoral Researcher",
+    "description": {{ site.description | strip_newlines | strip | jsonify }},
+    "affiliation": {
+      "@type": "ResearchOrganization",
+      "name": "IFISC - Institute for Cross-Disciplinary Physics and Complex Systems (UIB-CSIC)",
+      "url": "https://ifisc.uib-csic.es/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Bologna",
+      "url": "https://www.unibo.it/en"
+    },
+    "knowsAbout": [
+      "Complex systems",
+      "Urban mobility",
+      "Agent-based modelling",
+      "Graph theory",
+      "Machine learning",
+      "Physics-informed neural networks"
+    ],
+    "sameAs": {{ site.social.links | jsonify }}
+  }
+</script>
