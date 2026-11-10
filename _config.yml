@@ -258,6 +258,7 @@ exclude:
   - purgecss.js
   - rollup.config.js
   - "package*.json"
+  - cv_tex
 
 jekyll-archives:
   enabled: [categories, tags]

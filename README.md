@@ -9,17 +9,17 @@ repository), deployed to GitHub Pages by the
 
 ## Where things live
 
-| Path                     | What it holds                                                       |
-| ------------------------ | ------------------------------------------------------------------- |
-| `_tabs/`                 | The site pages. Each file becomes a sidebar entry (see note below).  |
-| `_tabs/about.md`         | The home page (`permalink: /`) — bio, research interests, teasers.   |
-| `_posts/`                | Blog posts, named `YYYY-MM-DD-title.md`.                             |
-| `_data/publications.yml` | Publication list — the single source for the home and Publications.  |
-| `_data/profiles.yml`     | External profile links shown on the home and Contacts pages.         |
-| `_data/contact.yml`      | The small icon row at the top of the sidebar.                        |
-| `assets/files/`          | Downloadable files, including the CV.                                |
-| `assets/img/`            | Images, avatar, and favicons.                                        |
-| `assets/css/jekyll-theme-chirpy.scss` | Custom styles layered on top of the theme.              |
+| Path                                  | What it holds                                                       |
+| ------------------------------------- | ------------------------------------------------------------------- |
+| `_tabs/`                              | The site pages. Each file becomes a sidebar entry (see note below). |
+| `_tabs/about.md`                      | The home page (`permalink: /`) — bio, research interests, teasers.  |
+| `_posts/`                             | Blog posts, named `YYYY-MM-DD-title.md`.                            |
+| `_data/publications.yml`              | Publication list — the single source for the home and Publications. |
+| `_data/profiles.yml`                  | External profile links shown on the home and Contacts pages.        |
+| `_data/contact.yml`                   | The small icon row at the top of the sidebar.                       |
+| `assets/files/`                       | Downloadable files, including the CV.                               |
+| `assets/img/`                         | Images, avatar, and favicons.                                       |
+| `assets/css/jekyll-theme-chirpy.scss` | Custom styles layered on top of the theme.                          |
 
 The sidebar navigation is generated from the `tabs` **collection** (the files in
 `_tabs/`), which shadows any top-level `tabs:` key in `_config.yml`. To add a

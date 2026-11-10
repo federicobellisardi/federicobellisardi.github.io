@@ -23,4 +23,5 @@ package-lock.json
 !.vscode/tasks.json
 
 # Misc
-*.zipcv_tex
+*.zip
+cv_tex
