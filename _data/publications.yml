@@ -17,7 +17,8 @@
   authors: Bellisardi F., Mizzi C., Fabbri A., Micheli D., Vannelli A., Bazzani A.
   venue: arXiv preprint
   year: 2026
-  # TODO: add arXiv DOI / URL
+  doi: 10.48550/arXiv.2611.13947
+  url: https://arxiv.org/abs/2611.13947
 
 - type: preprint
   title: Mobility energetic balance frames spatial configuration of cities
